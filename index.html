@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aissa Abdelaziz — AI/ML Engineer</title>
+<meta name="description" content="Aissa Abdelaziz is an AI/ML Engineer building LLM-based agents and ML systems, from research to production.">
+
+<!-- Theme is set before first paint to avoid a flash of the wrong theme. This is the
+     only inline script in the page; everything else lives in js/main.js. -->
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('theme');
+      var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%233462E8'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='54' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="logo" href="#hero">Aissa<span class="logo__dot">.</span></a>
+
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav__list" id="primary-nav">
+        <li><a class="nav__link" href="#about">About</a></li>
+        <li><a class="nav__link" href="#skills">Skills</a></li>
+        <li><a class="nav__link" href="#experience">Experience</a></li>
+        <li><a class="nav__link" href="#education">Education</a></li>
+        <li><a class="nav__link" href="#projects">Projects</a></li>
+        <li><a class="nav__link" href="#blog">Blog</a></li>
+        <li><a class="nav__link" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-header__controls">
+      <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to light theme">
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4.2"/>
+          <path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/>
+        </svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" focusable="false">
+          <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5z"/>
+        </svg>
+      </button>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section id="hero" class="hero" aria-labelledby="hero-title">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <p class="hero__eyebrow reveal" data-stagger-index="0"><span class="dot" aria-hidden="true"></span>AI/ML Engineer</p>
+        <h1 id="hero-title" class="hero__name reveal" data-stagger-index="1">Aissa Abdelaziz</h1>
+        <p class="hero__tagline reveal" data-stagger-index="2">Building LLM-based agents and ML systems from research to production.</p>
+
+        <p class="hero__byline reveal" data-stagger-index="3">
+          <a href="mailto:abdz.aissa@gmail.com">abdz.aissa@gmail.com</a>
+          <span class="hero__byline-sep" aria-hidden="true">·</span>
+          <a href="tel:+33754030452">+33 7 54 03 04 52</a>
+        </p>
+
+        <div class="hero__cta-group reveal" data-stagger-index="4">
+          <a class="btn btn--primary" href="#projects">View Projects</a>
+          <!-- PLACEHOLDER-CV-PATH: drop your real CV PDF at assets/cv/aissa-abdelaziz-cv.pdf (or update this href) -->
+          <a class="btn btn--secondary" href="assets/cv/aissa-abdelaziz-cv.pdf" download>Download CV</a>
+        </div>
+
+        <ul class="hero__social reveal" data-stagger-index="5">
+          <li>
+            <a href="https://github.com/aissa-abdelaziz" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55v-2.1c-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.4-5.26 5.68.41.36.78 1.08.78 2.17v3.22c0 .3.2.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/aissa-abdelaziz-50b8b819b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM.5 8.98h4.96V23.5H.5V8.98Zm7.98 0h4.75v1.99h.07c.66-1.25 2.28-2.57 4.69-2.57 5.02 0 5.94 3.3 5.94 7.6v8.5h-4.96v-7.54c0-1.8-.03-4.11-2.5-4.11-2.51 0-2.9 1.96-2.9 3.98v7.67H8.48V8.98Z"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Signature "agent graph" motif — ambient decoration only, hidden below 1024px in CSS -->
+      <svg class="hero__graph" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+        <g class="hero-graph__edges">
+          <line class="hero-graph__edge" x1="200" y1="180" x2="60"  y2="80"  style="animation-delay:0.1s"/>
+          <line class="hero-graph__edge" x1="200" y1="180" x2="180" y2="40"  style="animation-delay:0.25s"/>
+          <line class="hero-graph__edge" x1="200" y1="180" x2="300" y2="90"  style="animation-delay:0.4s"/>
+          <line class="hero-graph__edge" x1="200" y1="180" x2="340" y2="220" style="animation-delay:0.55s"/>
+          <line class="hero-graph__edge" x1="200" y1="180" x2="240" y2="320" style="animation-delay:0.7s"/>
+          <line class="hero-graph__edge" x1="200" y1="180" x2="100" y2="300" style="animation-delay:0.85s"/>
+          <line class="hero-graph__edge" x1="200" y1="180" x2="40"  y2="200" style="animation-delay:1s"/>
+          <line class="hero-graph__edge" x1="60"  y1="80"  x2="180" y2="40"  style="animation-delay:1.15s"/>
+          <line class="hero-graph__edge" x1="300" y1="90"  x2="340" y2="220" style="animation-delay:1.3s"/>
+        </g>
+        <g class="hero-graph__nodes">
+          <circle class="hero-graph__node" cx="200" cy="180" r="5" style="animation-delay:0s"/>
+          <circle class="hero-graph__node" cx="60"  cy="80"  r="4" style="animation-delay:0.4s"/>
+          <circle class="hero-graph__node" cx="180" cy="40"  r="4" style="animation-delay:0.8s"/>
+          <circle class="hero-graph__node" cx="300" cy="90"  r="4" style="animation-delay:1.2s"/>
+          <circle class="hero-graph__node" cx="340" cy="220" r="4" style="animation-delay:1.6s"/>
+          <circle class="hero-graph__node" cx="240" cy="320" r="4" style="animation-delay:2s"/>
+          <circle class="hero-graph__node" cx="100" cy="300" r="4" style="animation-delay:2.4s"/>
+          <circle class="hero-graph__node" cx="40"  cy="200" r="4" style="animation-delay:2.8s"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="section" aria-labelledby="about-title">
+    <div class="container">
+      <p class="section__eyebrow reveal" data-stagger-index="0"><span class="dot" aria-hidden="true"></span>About</p>
+      <h2 id="about-title" class="section__title reveal" data-stagger-index="1">Bringing AI systems into production</h2>
+
+      <div class="about__grid">
+        <div class="about__avatar-col reveal" data-stagger-index="2">
+          <img class="avatar" src="images/photo.png" alt="Aissa Abdelaziz">
+        </div>
+
+        <div class="about__body reveal" data-stagger-index="3">
+          <p>AI/ML Engineer at Institut Polytechnique de Paris, working on LLMs, AI agents, NLP, and computer vision. Focused on designing, developing, and deploying machine learning systems end-to-end — from research to production.</p>
+          <p>I’m based in Paris, speak French and English, and am open to discussing ideas, collaborating, and taking on freelance projects.</p>
+          <ul class="tag-list about__interests">
+            <li class="tag">Sport</li>
+            <li class="tag">Traveling</li>
+            <li class="tag">Chess</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills" class="section" aria-labelledby="skills-title">
+    <div class="container">
+      <p class="section__eyebrow reveal" data-stagger-index="0"><span class="dot" aria-hidden="true"></span>Skills</p>
+      <h2 id="skills-title" class="section__title reveal" data-stagger-index="1">Toolkit</h2>
+
+      <div class="skills__groups">
+        <div class="skills__group reveal" data-stagger-index="2">
+          <h3 class="skills__group-title">Programming</h3>
+          <ul class="tag-list">
+            <li class="tag">Python</li>
+            <li class="tag">C</li>
+            <li class="tag">SQL</li>
+            <li class="tag">Bash</li>
+          </ul>
+        </div>
+
+        <div class="skills__group reveal" data-stagger-index="3">
+          <h3 class="skills__group-title">ML &amp; AI</h3>
+          <ul class="tag-list">
+            <li class="tag">PyTorch</li>
+            <li class="tag">Transformers</li>
+            <li class="tag">Scikit-learn</li>
+            <li class="tag">OpenCV</li>
+          </ul>
+        </div>
+
+        <div class="skills__group reveal" data-stagger-index="4">
+          <h3 class="skills__group-title">LLMs &amp; Agents</h3>
+          <ul class="tag-list">
+            <li class="tag">LangGraph</li>
+            <li class="tag">LangChain</li>
+            <li class="tag">vLLM</li>
+            <li class="tag">RAG</li>
+          </ul>
+        </div>
+
+        <div class="skills__group reveal" data-stagger-index="5">
+          <h3 class="skills__group-title">Tools &amp; Infra</h3>
+          <ul class="tag-list">
+            <li class="tag">Docker</li>
+            <li class="tag">FastAPI</li>
+            <li class="tag">Git</li>
+            <li class="tag">PostgreSQL</li>
+            <li class="tag">HPC</li>
+            <li class="tag">Cloud</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section id="experience" class="section" aria-labelledby="experience-title">
+    <div class="container">
+      <p class="section__eyebrow reveal" data-stagger-index="0"><span class="dot" aria-hidden="true"></span>Experience</p>
+      <h2 id="experience-title" class="section__title reveal" data-stagger-index="1">Where the work has happened</h2>
+
+      <ol class="timeline">
+        <li class="timeline__item reveal" data-stagger-index="2">
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__role">AI/ML Engineer <span class="timeline__org">— Institut Polytechnique de Paris (Hi! PARIS)</span></h3>
+            <p class="timeline__meta">Jan 2026 – Present · Paris, France</p>
+            <ul class="timeline__list">
+              <li><strong>Develop LLM-based RAG systems</strong> at IP Paris, covering document ingestion, preprocessing, chunking, embedding generation, vector search, retrieval, context construction, and LLM-based answer generation.</li>
+              <li><strong>Train and evaluate deep-learning models with PyTorch</strong> on HPC infrastructure, designing experiments, running GPU workloads, and analyzing model performance against established baselines.</li>
+              <li><strong>Run large-scale GPU/HPC experiments</strong> on research clusters, including job configuration, resource allocation, experiment management, reproducibility, and analysis of training and evaluation results.</li>
+              <li><strong>Develop open-source Python packages</strong> for estimating the energy consumption and environmental impact of AI models, with a focus on reproducible measurement and benchmarking across model workloads.</li>
+              <li><strong>Collaborate with researchers and engineers</strong> on applied AI/ML research projects, translating research requirements into reproducible experiments, prototypes, and technical implementations.</li>
+              <li><strong>Advise startups on AI product development</strong>, helping teams identify relevant AI use cases, select appropriate models and architectures, design technical approaches, and integrate AI capabilities into their products.</li>
+              <li><strong>Teach AI/ML courses to Master's and PhD students</strong>, covering machine learning, LLMs, AI agents, and practical implementation through lectures, technical exercises, and hands-on projects.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item reveal" data-stagger-index="3">
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__role">Machine Learning Engineering Intern <span class="timeline__org">— GoPro</span></h3>
+            <p class="timeline__meta">Apr 2024 – Oct 2024 · Paris, France</p>
+            <ul class="timeline__list">
+              <li><strong>Developed and optimized an AI-based video frame interpolation pipeline</strong>, improving frame generation quality and reducing inference latency for edge-device deployment.</li>
+              <li><strong>Evaluated and benchmarked multiple deep learning approaches</strong>, analyzing quality, performance, and resource consumption to identify the most suitable solution for production.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item reveal" data-stagger-index="4">
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__role">Machine Learning Engineering Intern <span class="timeline__org">— Assystem</span></h3>
+            <p class="timeline__meta">May 2023 – Aug 2023 · Paris, France</p>
+            <ul class="timeline__list">
+              <li><strong>Developed a graph neural network-based pipeline</strong> to automatically detect and extract tables from complex technical documents.</li>
+              <li><strong>Designed and evaluated data preprocessing, graph construction, and model training workflows</strong> to improve table detection and extraction accuracy.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section id="education" class="section" aria-labelledby="education-title">
+    <div class="container">
+      <p class="section__eyebrow reveal" data-stagger-index="0"><span class="dot" aria-hidden="true"></span>Education</p>
+      <h2 id="education-title" class="section__title reveal" data-stagger-index="1">Education</h2>
+
+      <ul class="education-list">
+        <li class="education-list__item reveal" data-stagger-index="2">
+          <h3 class="education-list__degree">Master MVA — Mathematics, Vision & AI</h3>
+          <p class="education-list__meta">ENS Paris-Saclay · Sept 2023 – Oct 2024 · GPA 4.0/4.0</p>
+        </li>
+        <li class="education-list__item reveal" data-stagger-index="3">
+          <h3 class="education-list__degree">Master's Degree — Artificial Intelligence</h3>
+          <p class="education-list__meta">Université Paris-Saclay · Sept 2022 – Oct 2024 · GPA 3.7/4.0</p>
+        </li>
+        <li class="education-list__item reveal" data-stagger-index="4">
+          <h3 class="education-list__degree">Bachelor's Degree — Computer Engineering</h3>
+          <p class="education-list__meta">IGEE, Algeria · Sept 2019 – May 2022 · GPA 3.7/4.0</p>
+        </li>
+      </ul>
+
+      <div class="certifications reveal" data-stagger-index="5">
+        <h3 class="skills__group-title">Certifications</h3>
+        <ul class="tag-list">
+          <li class="tag">ML Specialization — Coursera</li>
+          <li class="tag">MLOps — DeepLearning.AI</li>
+          <li class="tag">AI Agents — LangChain</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects" class="section" aria-labelledby="projects-title">
+    <div class="container">
+      <p class="section__eyebrow reveal" data-stagger-index="0"><span class="dot" aria-hidden="true"></span>Projects</p>
+      <h2 id="projects-title" class="section__title reveal" data-stagger-index="1">Selected work</h2>
+
+      <div class="projects__grid">
+        <article class="card reveal" data-stagger-index="2">
+          <span class="card__badge"><span class="dot" aria-hidden="true"></span>2nd place — Alan &amp; Mistral AI Hackathon 2024</span>
+          <h3 class="card__title">CardioCare+ — Blood Test Analysis with LLMs</h3>
+          <p class="card__desc">AI web platform powered by Mistral LLMs to analyze and simplify blood test results, explain key health indicators in plain language, and provide personalized health recommendations.</p>
+          <ul class="tag-list">
+            <li class="tag">LLM</li>
+            <li class="tag">Mistral AI</li>
+            <li class="tag">Pixtral</li>
+            <li class="tag">Healthcare</li>
+          </ul>
+          <!-- Links to the project detail page below; edit that page's content, or point this at an external write-up/repo instead -->
+          <a class="card__link" href="projects/cardiocare.html">View project <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="card reveal" data-stagger-index="3">
+          <h3 class="card__title">AI Video Frame Interpolation <span class="card__org">— GoPro</span></h3>
+          <p class="card__desc">Research and engineering work on AI-based video frame interpolation, improving output quality while making inference faster on edge devices.</p>
+          <ul class="tag-list">
+            <li class="tag">Computer Vision</li>
+            <li class="tag">Edge AI</li>
+            <li class="tag">Video Processing</li>
+          </ul>
+          <!-- Links to the project detail page below; edit that page's content, or point this at an external write-up/repo instead -->
+          <a class="card__link" href="projects/gopro-video-interpolation.html">View project <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="card reveal" data-stagger-index="4">
+          <h3 class="card__title">Document Table Extraction with GNNs <span class="card__org">— Assystem</span></h3>
+          <p class="card__desc">A system to automatically extract tables from complex documents using graph neural networks.</p>
+          <ul class="tag-list">
+            <li class="tag">Graph Neural Networks</li>
+            <li class="tag">Document AI</li>
+          </ul>
+          <!-- Links to the project detail page below; edit that page's content, or point this at an external write-up/repo instead -->
+          <a class="card__link" href="projects/document-table-extraction.html">View project <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="card reveal" data-stagger-index="5">
+          <h3 class="card__title">Local RAG System</h3>
+          <p class="card__desc">Built a locally hosted RAG system to help employees find information in internal documents, comparing open-source LLMs and evaluating retrieval quality and latency.</p>
+          <ul class="tag-list">
+            <li class="tag">RAG</li>
+            <li class="tag">Open-Source LLMs</li>
+            <li class="tag">Vector Search</li>
+            <li class="tag">Evaluation</li>
+          </ul>
+          <a class="card__link" href="projects/local-rag.html">View project <span aria-hidden="true">→</span></a>
+        </article>
+        
+      </div>
+
+      <p class="projects__all reveal" data-stagger-index="7"><a class="card__link" href="projects/index.html">View all projects <span aria-hidden="true">→</span></a></p>
+    </div>
+  </section>
+
+  <!-- ============ BLOG ============ -->
+  <section id="blog" class="section" aria-labelledby="blog-title">
+    <div class="container">
+      <p class="section__eyebrow reveal" data-stagger-index="0"><span class="dot" aria-hidden="true"></span>Writing</p>
+      <h2 id="blog-title" class="section__title reveal" data-stagger-index="1">Notes &amp; essays</h2>
+
+      <div class="blog__grid">
+        <!-- PLACEHOLDER-BLOG-POST: replace with a real post (title, date, excerpt); body lives in blog/agent-memory.html -->
+        <article class="card card--post reveal" data-stagger-index="2">
+          <p class="card__date"><time datetime="2026-01-01">Coming soon</time></p>
+          <h3 class="card__title">Why Agent Memory Is Still an Unsolved Problem</h3>
+          <p class="card__desc">A closer look at how state, context windows, and retrieval interact once an LLM agent has to remember anything across turns.</p>
+          <a class="card__link" href="blog/agent-memory.html">Read more <span aria-hidden="true">→</span></a>
+        </article>
+
+        <!-- PLACEHOLDER-BLOG-POST: replace with a real post (title, date, excerpt); body lives in blog/finetuning-vs-rag.html -->
+        <article class="card card--post reveal" data-stagger-index="3">
+          <p class="card__date"><time datetime="2026-01-01">Coming soon</time></p>
+          <h3 class="card__title">Notes on Fine-Tuning vs. RAG for Domain-Specific LLMs</h3>
+          <p class="card__desc">When retrieval beats fine-tuning, when it doesn't, and what changes once the domain gets narrow and technical.</p>
+          <a class="card__link" href="blog/finetuning-vs-rag.html">Read more <span aria-hidden="true">→</span></a>
+        </article>
+
+        <!-- PLACEHOLDER-BLOG-POST: replace with a real post (title, date, excerpt); body lives in blog/hpc-debugging.html -->
+        <article class="card card--post reveal" data-stagger-index="4">
+          <p class="card__date"><time datetime="2026-01-01">Coming soon</time></p>
+          <h3 class="card__title">What HPC Taught Me About Debugging Neural Networks</h3>
+          <p class="card__desc">Lessons from running large training jobs on shared clusters, and how scarce compute changes the way you debug.</p>
+          <a class="card__link" href="blog/hpc-debugging.html">Read more <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+
+      <p class="blog__all reveal" data-stagger-index="5"><a class="card__link" href="blog/index.html">View all posts <span aria-hidden="true">→</span></a></p>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="section" aria-labelledby="contact-title">
+    <div class="container contact__grid">
+      <div class="contact__info reveal" data-stagger-index="0">
+        <p class="section__eyebrow"><span class="dot" aria-hidden="true"></span>Contact</p>
+        <h2 id="contact-title" class="section__title">Let's talk</h2>
+        <p class="contact__lead">Whether it's a collaboration, a full-time role, or a freelance project, I'd love to hear from you — especially if it involves LLMs, applied machine learning, or building a SaaS product.</p>
+        <ul class="contact__list">
+          <li><a href="mailto:abdz.aissa@gmail.com">abdz.aissa@gmail.com</a></li>
+          <li><a href="tel:+33754030452">+33 7 54 03 04 52</a></li>
+          <li><a href="https://github.com/aissa-abdelaziz" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/aissa-abdelaziz-50b8b819b/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        </ul>
+      </div>
+
+      <!-- PLACEHOLDER-FORMSPREE-ID: sign up at formspree.io and replace PLACEHOLDER_FORM_ID below with your real form ID -->
+      <form class="form reveal" data-stagger-index="1" id="contact-form" action="https://formspree.io/f/PLACEHOLDER_FORM_ID" method="POST" novalidate>
+        <div class="form__group">
+          <label class="form__label" for="name">Name</label>
+          <input class="form__input" type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error">
+          <p class="form__error" id="name-error"></p>
+        </div>
+
+        <div class="form__group">
+          <label class="form__label" for="email">Email</label>
+          <input class="form__input" type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error">
+          <p class="form__error" id="email-error"></p>
+        </div>
+
+        <div class="form__group">
+          <label class="form__label" for="message">Message</label>
+          <textarea class="form__textarea" id="message" name="message" rows="5" required aria-describedby="message-error"></textarea>
+          <p class="form__error" id="message-error"></p>
+        </div>
+
+        <!-- Honeypot field: hidden from sighted users and screen readers, humans never fill it in -->
+        <div class="form__honeypot" aria-hidden="true">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button class="btn btn--primary" type="submit">Send message</button>
+        <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <p class="site-footer__copy">© <span id="year"></span> Aissa Abdelaziz. All rights reserved.</p>
+
+    <ul class="footer__links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <ul class="hero__social">
+      <li>
+        <a href="https://github.com/aissa-abdelaziz" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55v-2.1c-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.4-5.26 5.68.41.36.78 1.08.78 2.17v3.22c0 .3.2.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/aissa-abdelaziz-50b8b819b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM.5 8.98h4.96V23.5H.5V8.98Zm7.98 0h4.75v1.99h.07c.66-1.25 2.28-2.57 4.69-2.57 5.02 0 5.94 3.3 5.94 7.6v8.5h-4.96v-7.54c0-1.8-.03-4.11-2.5-4.11-2.51 0-2.9 1.96-2.9 3.98v7.67H8.48V8.98Z"/></svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

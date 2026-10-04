@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What HPC Taught Me About Debugging Neural Networks — Aissa Abdelaziz</title>
+<meta name="description" content="Lessons from running large training jobs on shared clusters, and how scarce compute changes the way you debug.">
+
+<!-- Theme is set before first paint to avoid a flash of the wrong theme. This is the
+     only inline script in the page; everything else lives in js/main.js. -->
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('theme');
+      var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%233462E8'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='54' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="logo" href="../index.html">Aissa<span class="logo__dot">.</span></a>
+
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav__list" id="primary-nav">
+        <li><a class="nav__link" href="../index.html#about">About</a></li>
+        <li><a class="nav__link" href="../index.html#skills">Skills</a></li>
+        <li><a class="nav__link" href="../index.html#experience">Experience</a></li>
+        <li><a class="nav__link" href="../index.html#education">Education</a></li>
+        <li><a class="nav__link" href="../projects/index.html">Projects</a></li>
+        <li><a class="nav__link" href="index.html">Blog</a></li>
+        <li><a class="nav__link" href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-header__controls">
+      <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to light theme">
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4.2"/>
+          <path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/>
+        </svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" focusable="false">
+          <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5z"/>
+        </svg>
+      </button>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <article class="section" aria-labelledby="post-title">
+    <div class="container post__container">
+      <p class="post__back reveal" data-stagger-index="0"><a class="card__link" href="index.html">← Back to writing</a></p>
+
+      <p class="section__eyebrow reveal" data-stagger-index="1"><span class="dot" aria-hidden="true"></span>Writing</p>
+      <h1 id="post-title" class="post__title reveal" data-stagger-index="2">What HPC Taught Me About Debugging Neural Networks</h1>
+      <p class="post__meta reveal" data-stagger-index="3"><time datetime="2026-01-01">Coming soon</time></p>
+
+      <div class="post__body reveal" data-stagger-index="4">
+        <p class="post__lead">Lessons from running large training jobs on shared clusters, and how scarce compute changes the way you debug.</p>
+
+        <!-- PLACEHOLDER-BLOG-POST-BODY: replace this paragraph with your full article.
+             Headings (use <h2>), paragraphs (class="post__text"), and lists all inherit
+             the site's styling automatically — no extra markup needed. -->
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <p class="site-footer__copy">© <span id="year"></span> Aissa Abdelaziz. All rights reserved.</p>
+
+    <ul class="footer__links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../projects/index.html">Projects</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+
+    <ul class="hero__social">
+      <li>
+        <a href="https://github.com/aissa-abdelaziz" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55v-2.1c-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.4-5.26 5.68.41.36.78 1.08.78 2.17v3.22c0 .3.2.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/aissa-abdelaziz-50b8b819b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM.5 8.98h4.96V23.5H.5V8.98Zm7.98 0h4.75v1.99h.07c.66-1.25 2.28-2.57 4.69-2.57 5.02 0 5.94 3.3 5.94 7.6v8.5h-4.96v-7.54c0-1.8-.03-4.11-2.5-4.11-2.51 0-2.9 1.96-2.9 3.98v7.67H8.48V8.98Z"/></svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+<script src="../js/main.js" defer></script>
+</body>
+</html>
