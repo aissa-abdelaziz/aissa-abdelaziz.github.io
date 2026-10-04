@@ -459,6 +459,23 @@ h1, h2, h3 {
   font-size: var(--fs-small);
   color: var(--color-text-secondary);
   margin-block-end: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 0.4rem;
+}
+
+.hero__byline-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.hero__byline-icon {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  color: var(--color-accent);
 }
 
 .hero__byline a {
