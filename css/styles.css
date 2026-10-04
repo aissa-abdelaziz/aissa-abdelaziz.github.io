@@ -660,8 +660,6 @@ h1, h2, h3 {
   color: var(--color-text-secondary);
 }
 
-.timeline__list li { position: relative; padding-inline-start: 1.1rem; }
-.timeline__list li::before { content: "\2014"; position: absolute; left: 0; }
 
 /* =========================================================================
    EDUCATION
